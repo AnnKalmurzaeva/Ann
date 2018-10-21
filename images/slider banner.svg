@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 407.64 572.08">
+    <defs>
+        <style>.banner-color-1{fill:#f7991c;}.banner-color-2{fill:#d68418;}.banner-color-3{fill:#14100c;}.banner-color-4{fill:#fff;}</style>
+    </defs>
+    <title>Banner</title>
+    <g id="banner-Layer_2" data-name="Layer 2">
+        <g id="OBJECTS">
+            <polygon class="banner-color-1" points="169.39 41.75 319.17 41.75 313.83 115.5 169.39 41.75"/>
+            <polygon class="banner-color-2" points="66.93 455.07 300.57 495.22 293.16 415.65 66.93 455.07"/>
+            <polygon class="banner-color-1" points="300.57 495.22 169.39 551.61 157.35 470.74 300.57 495.22"/>
+            <polygon class="banner-color-1" points="367.72 435.31 66.93 455.07 37.63 100.49 360.94 135.66 367.72 435.31"/>
+            <polygon class="banner-color-3" points="384.24 240.08 19.61 224.58 24.77 135.75 384.24 162.6 384.24 240.08"/>
+            <polygon points="19.61 224.58 49.85 248.43 47.98 225.79 19.61 224.58"/>
+            <polygon points="384.24 240.08 364.23 254.03 363.86 239.21 384.24 240.08"/>
+            <polygon class="banner-color-2" points="360.94 135.66 169.39 41.75 157.35 113.51 360.94 135.66"/>
+            <polygon class="banner-color-3" points="113.71 59.85 105.18 66.25 94.68 48.24 113.71 59.85"/>
+            <polygon class="banner-color-3" points="325.99 465.13 335.74 460.79 341.96 480.69 325.99 465.13"/>
+            <polygon class="banner-color-3" points="347.58 71.49 347.86 79.23 361 71.01 358.59 61.28 347.58 71.49"/>
+            <polygon class="banner-color-3" points="24.56 418.66 25.14 426.38 37.95 417.64 35.15 408.02 24.56 418.66"/>
+            <polygon class="banner-color-1" points="6.39 125.84 0 130.22 13.98 136.92 20.91 129.67 6.39 125.84"/>
+            <polygon class="banner-color-1" points="376.32 155.36 396.66 144.79 388.98 157.9 376.32 155.36"/>
+            <polygon class="banner-color-1" points="223.2 20.87 232.68 0 234.72 15.05 223.2 20.87"/>
+            <polygon class="banner-color-1" points="9.21 322.64 17.57 309.7 24.31 303.3 30 309.29 9.21 322.64"/>
+            <polygon class="banner-color-1" points="407.64 317.89 393.06 312.29 385.69 306.62 391.86 298.58 407.64 317.89"/>
+            <polygon class="banner-color-1" points="285.24 572.09 276.13 562.52 272.54 555.52 280.17 551.61 285.24 572.09"/>
+            <rect class="banner-color-4" x="88.87" y="351.29" width="248.51" height="8.95"/>
+        </g>
+    </g>
+</svg>

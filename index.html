@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang='ru'>
+  <head>
+    <meta charset='utf-8'>
+    <title>singleton</title>
+    <link href='style_css/style.css' rel='stylesheet' type='text/css'>
+    <script src='java_script.js'></script>
+  </head>
+  <body>
+<div class='container_menu_header' display:'flex'>
+    <div class='image_osminog'>
+        <img src='data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE3LjEuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9ItCh0LvQvtC5XzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA1MDAgNTAwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MDAgNTAwIiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8cGF0aCBmaWxsPSIjRkU2NzAyIiBkPSJNMjQ5LDI0LjJjOC4yLTEuNiwyNS43LDAuNywzOCwwLjdjNywxLjIsMTQuMSwyLjMsMjEuMSwzLjhjMjMuMyw1LDQ0LjIsMTQuNCw1OS4yLDMzLjkKCQljMTAuMywxMy4zLDE3LjUsMjguMiwyMi4xLDQ0LjRjOS4zLDMyLjksNy42LDYzLjktMTUuOSw5MS4zYy0xMC42LDEyLjQtMjAuNiwyNS40LTMwLjQsMzguNGMtNC4yLDUuNi03LjksMTEuOC0xMC44LDE4LjIKCQljLTEuNSwzLjMtMiw4LjQtMC41LDExLjRjNS41LDEwLjgsMTIuMiwyMS4xLDIxLjgsMjljOS40LDcuNywyMCwxMSwzMi4zLDkuMWMxNS0yLjMsMjYuNy0xMC42LDM3LjgtMjAuMQoJCWM4LjQtNy4yLDEzLjUtMTUuOSwxNC45LTI3LjJjMi40LTE4LjctMy40LTMzLjEtMTcuOS00MS44Yy0xMS4xLTYuNy0yMS4yLTItMjIuNywxMC44Yy0wLjYsNS0wLjUsMTAtMC44LDE1CgkJYy05LjQtMy4xLTEzLjItOC0xMi43LTE3LjNjMC4zLTUsMS4zLTEwLjEsMi41LTE1YzEuNS02LDUuNS05LjgsMTEuNC0xMS43YzktMywxOC4zLTQuNSwyNy44LTMuNmMyLjcsMC4yLDUuOCwwLjgsNy45LDIuMwoJCWM3LjIsNS4zLDE0LjMsMTAuNywyMC43LDE2LjljNi42LDYuMiw4LjksMTQuMyw4LjQsMjMuNmMtMi40LDQxLjgtMjQuMiw3MC4zLTYwLjIsODkuMmMtOS4xLDQuOC0xOSw1LjEtMjguOSwzLjUKCQljLTE4LjctMy4xLTMzLjMtMTIuMi00Mi41LTI5LjNjLTQuNy04LjctOS42LTE3LjMtMTQuNi0yNi4zYy0yLjksMjYuNCw1LDQ4LjQsMjQuNSw2NS45YzEyLDEwLjgsMjYuMiwxMy41LDQxLjMsNy45CgkJYzExLjctNC4zLDIyLjktOS44LDM0LjQtMTQuNWM3LjUtMy4xLDE1LjEtNi4zLDIyLjktOC4zYzguOS0yLjMsMTcuNC0wLjgsMjMsNy41YzMuOSw1LjgsOS45LDE2LjIsMTAuMSwxNi45CgkJYzAuOSw1LjIsMC45LDMuNCwwLjgsOC44Yy0wLjIsMC41LTAuNyw0LjEtMC45LDQuNmMtMC4yLDAuNC0xMCwyMS44LTE2LDMxLjVjLTcuMSwxMS40LTE4LjksMTUuOS0zMS42LDE3LjcKCQljLTYuOSwxLTEyLjEtMi45LTEyLjktOGM2LjUtMS4xLDEzLjgtMC42LDE5LjMtMy41YzE0LjktNy43LDI0LTIwLjEsMjQuNS0zNy41YzAuNC0xMi44LTkuOS0yMS41LTIyLTE3LjYKCQljLTEzLjgsNC41LTI3LjQsMTAuMS00MC40LDE2LjZjLTguNiw0LjMtMTcuMSw4LjUtMjYuNiwxMGMtMTEsMS44LTIyLjUsMi40LTMxLjItNS43Yy0xNS4yLTE0LjEtMjkuMS0yOS43LTM1LjUtNDkuOQoJCWMtNC44LTE1LjItMTEuOS0yOS4zLTE4LjEtNDMuOWMtMC40LTEtMS0xLjktMi0zLjdjLTAuNSw0LTEsNi44LTEuMyw5LjdjLTIuMSwxNy44LTQsMzUuNi0wLjksNTMuNGMzLjEsMTguMyw2LjcsMzYuNiwxMC4zLDU0LjkKCQljMi44LDE0LjIsMC4xLDI2LjUtMTEuMSwzNi41Yy0xNC42LDEzLTI5LjQsMjUuNi00OC42LDMxLjRjLTMuOSwxLTYuMywxLTExLjEsMGMtMS41LTAuOC0yLjktMS41LTQuNC0yLjMKCQljLTUuMy0yLjgtMTAuNi02LTExLjEtMTIuNmMtMC45LTExLjMsMC43LTIyLjUsNS41LTMyLjljMi4zLTQuOSwxMC41LTYuNiwxNS45LTMuMWMtNi4yLDMuMi0xMCw3LjgtMTIuMSwxNC40CgkJYy0yLjQsNy4yLTAuNSwxMi42LDQuNiwxNy41YzUuMSw0LjksMTEuMSw2LjksMTcuNywzLjZjNy4xLTMuNiwxNC41LTcsMjAuOC0xMS44YzcuOS01LjksMTUuMi0xMy4yLDE2LjMtMjMuNwoJCWMxLjItMTEuOC0wLjUtMjMuNC03LjItMzMuN2MtMy4zLTUuMi03LjMtMTAuMS05LjUtMTUuOGMtMi4zLTYtNC0xMi44LTMuNy0xOS4xYzAuNS05LjUsMi45LTE4LjgsNC42LTI4LjIKCQljMS41LTguMiwzLTE2LjQsNC41LTI0LjZjLTAuNS0wLjEtMC45LTAuMi0xLjQtMC4zYy00LDExLjktOSwyMy41LTExLjcsMzUuN2MtMy43LDE2LjMtMTMsMjguMy0yNS41LDM4LjQKCQljLTQuNywzLjgtMTAuMSw1LjctMTYuMyw1LjNjLTQuOC0wLjMtOS41LTAuMi0xNC4zLTAuMWMtMy42LDAuMS02LjMsMS42LTcsNS40Yy0wLjgsMy45LTAuMyw3LjYsMy42LDkuNmMyLjUsMS4zLDUuNSwyLjEsOC4zLDIuNgoJCWM0LjMsMC43LDguNiwwLjksMTMuMSwxLjNjLTIuOCw1LjYtNi42LDkuMS0xMC41LDguOWMtOS4yLTAuNS0xOC0yLjctMjUuNC04LjZjLTUuOC00LjUtNi43LTEwLjktNS42LTE3LjYKCQljMS4xLTYuMSw1LjEtMTAuMywxMS0xMS45YzQtMS4xLDguMi0xLjUsMTIuMy0xLjhjOC0wLjUsMTUuMi0yLjksMjAuNS05LjJjOC4zLTkuOCwxNS42LTIwLjMsMTguNi0zMy4xYzIuMy05LjksNC4xLTIwLDYtMzAKCQljLTAuNi0wLjEtMS4xLTAuMy0xLjctMC40Yy0xLDIuOC0yLjEsNS42LTMuMSw4LjRjLTUuNiwxNy4yLTEzLDMzLjItMjYuNyw0NS43Yy04LjcsNy45LTE4LjIsMTMuNi0yOS44LDE1LjgKCQljLTE3LjIsMy4yLTM0LjQsNi45LTUxLjgsOS4xYy0xNC42LDEuOS0yNC42LDkuNS0zMi4zLDIxLjNjLTYuNCw5LjktNC42LDE5LDUuMywyNS4zYzYuNiw0LjIsOS42LDMuOCwxNC40LTIuNAoJCWMzLjktNC45LDcuNy05LjksMTIuNC0xNS45YzIuOSwzLjcsNS45LDYuMiw3LjEsOS40YzMsNy40LTAuNiwxOS4xLTcsMjRjLTE0LjgsMTEuMy00Miw2LjMtNDcuOC0xNC42Yy0xLjktNi44LTIuMy0xNC4zLTItMjEuNQoJCWMwLjctMjEuOCwxNi44LTM4LjYsMzguNS00MC44YzQuOS0wLjUsOS44LTEsMTQuNy0xLjJjMTkuNy0wLjcsMzcuNS03LDU0LjctMTYuM2MxNS41LTguMywyNS4xLTE5LjksMjcuNi0zNy4zCgkJYzAuNC0yLjksMS4zLTUuNywxLjktOC42YzAuMi0xLjEsMC4xLTIuMiwwLjItMy4zYy0yLjEsMS4yLTMuMiwyLjctNC41LDQuMmMtNiw3LjMtMTEuNiwxNC45LTE4LDIxLjcKCQljLTExLDExLjYtMjMuOCwyMC42LTM5LjksMjMuN2MtMTMsMi42LTI2LjEsMy4yLTM5LjUsMy4xYy0yNC43LTAuMS00NC43LTkuOS02Mi4xLTI2LjVjLTguMS03LjctMTIuOS0xNy4zLTE1LjktMjcuOQoJCWMtMC41LTQuNS0xLjktMTMuNi0yLjgtMThjMC04LDEuNC0xOS41LDEuNC0xOS41czAuNy0xLjYsMS4xLTIuNGMzLjMtOC4yLDYtMTYuOSwxMC4xLTI0LjdjNy4xLTEzLjIsMTcuMi0yMy4yLDMyLjgtMjYuMgoJCWM2LjMtMS4yLDEyLTAuOSwxNi42LDQuMWM1LjYsNi4xLDExLjMsMTIuMiwxNi42LDE4LjZjMS42LDIsMyw1LDIuOSw3LjVjLTAuMiw1LjgtMC44LDExLjctMi4yLDE3LjNjLTEuOSw3LjgtNy43LDEyLjUtMTQuOCwxNS41CgkJYy02LjYsMi44LTEzLjEtMC43LTE1LjEtNy42YzAuNC0wLjEsMC44LTAuNSwxLjItMC40YzIuNiwwLjQsNS4xLDEuMiw3LjcsMS40YzEuNCwwLjEsMy42LTAuNiw0LjEtMS41YzYuMS0xMi42LDYuMy0yNS4zLTktMzIuNwoJCWMtMTAuNC01LjEtMTkuNC0xLjUtMjMuMiw5LjVjLTIuNCw2LjctNC41LDEzLjQtNi40LDIwLjJjLTIuNywxMC4xLTQsMjAuNCwwLjUsMzAuM2MzLjYsNy44LDcuNSwxNS42LDEyLjIsMjIuNwoJCWMxMC43LDE2LjQsMzEuNCwyNC40LDUwLjIsMjAuNWMyNS01LjIsNDYuMS0xNy4zLDY0LjYtMzQuN2M3LjMtNi45LDguOS0xNC42LDUuNy0yMy45Yy0zLjktMTEuNi0xMC42LTIxLjQtMTguNy0zMC41CgkJYy02LjUtNy40LTEzLjItMTQuNy0xOC44LTIyLjhjLTI1LjQtMzYuOC0yNC4xLTc4LjcsMy4yLTExNC4xYzEyLjktMTYuNywyOS4zLTI5LjQsNDcuNy0zOS41YzEyLjQtNi43LDI1LjktMTMuNSw0MC4xLTE1LjIKCQlDMjQyLjQsMjUsMjQwLjgsMjUuOCwyNDksMjQuMnogTTI1My43LDE0MC44YzAtMTUuMS0zLjYtMjcuMS0xMC40LTM2LjZjLTE3LjUtMjQuOC01MC41LTI2LjktNjkuOS00LjYKCQljLTE4LjMsMjEuMS0xOC45LDUzLjEtMS4yLDc0LjljMTcuMSwyMS4xLDQ2LjIsMjIuOCw2NS40LDMuN0MyNDguNiwxNjcuMSwyNTMuNCwxNTMuNCwyNTMuNywxNDAuOHogTTM2MiwxNDEuMQoJCWMwLTEzLjYtMi41LTIzLjYtNy4zLTMyLjFjLTE2LTI4LjUtNTAuNS0zMy40LTcyLjItMTAuM2MtMjAuMywyMS42LTE5LjcsNTguNCwxLjIsNzkuM2MxOSwxOSw0OC4xLDE3LjYsNjUuMi0zLjIKCQlDMzU3LjcsMTY0LjEsMzYxLjgsMTUxLjYsMzYyLDE0MS4xeiBNMjM5LjEsMjE5LjZjLTEuOCwzLjYsMCw3LDUuNyw4LjZjOC4yLDIuMywxNi43LDMuMSwyNSwwLjZjMS43LTAuNSwzLjYtMiw0LjQtMy41CgkJYzIuMy00LjUtMC4zLTE0LjktNC44LTE5YzAuMiwyLjQsMC4zLDQuMywwLjYsNi4yYzEuMiw3LjctMS45LDExLjgtOS43LDExLjFDMjUzLjMsMjIzLjEsMjQ2LjUsMjIxLjEsMjM5LjEsMjE5LjZ6IE0yMzguMywyNS41CgkJYzQuMi0wLjUsNi4xLTAuNSwxMC44LTEuMyBNMjcuNSwyNTMuNUMyNywyNDIuOCwyOC45LDIzNCwyOC45LDIzNCBNMjguOSwyMzRjMCwwLDAuNS0xLjIsMS4xLTIuNCIvPgoJPHBhdGggZmlsbD0iI0ZERkNGQiIgZD0iTTI1My43LDE0MC44Yy0wLjMsMTIuNi01LjEsMjYuMy0xNi4xLDM3LjNjLTE5LjIsMTkuMS00OC4zLDE3LjQtNjUuNC0zLjdjLTE3LjYtMjEuNy0xNy4xLTUzLjgsMS4yLTc0LjkKCQljMTkuNC0yMi4zLDUyLjUtMjAuMSw2OS45LDQuNkMyNTAuMSwxMTMuNywyNTMuOCwxMjUuNywyNTMuNywxNDAuOHogTTI0Ni40LDEzNC40Yy0wLjItMS42LTAuNS00LjUtMS4xLTcuMwoJCWMtMi45LTEyLjgtMTMuNS0yMi43LTI1LjMtMjMuNWMtMTIuMS0wLjgtMjMuMyw2LjgtMjcuOCwxOS40Yy00LjUsMTIuNS0yLjgsMjQuMyw1LjgsMzQuN2MxMC44LDEzLDI5LjIsMTIuOSw0MC4zLDAuMQoJCUMyNDMuNywxNTEuNCwyNDYuMiwxNDQsMjQ2LjQsMTM0LjR6Ii8+Cgk8cGF0aCBmaWxsPSIjRkRGQ0ZCIiBkPSJNMzYyLDE0MS4xYy0wLjIsMTAuNS00LjMsMjIuOS0xMy4xLDMzLjdjLTE3LjEsMjAuNy00Ni4xLDIyLjItNjUuMiwzLjJjLTIwLjktMjAuOS0yMS41LTU3LjctMS4yLTc5LjMKCQljMjEuNy0yMy4xLDU2LjItMTguMiw3Mi4yLDEwLjNDMzU5LjQsMTE3LjYsMzYyLDEyNy42LDM2MiwxNDEuMXogTTMzMC42LDEzNC40Yy0wLjItMS42LTAuNC00LjUtMS4xLTcuNAoJCWMtMi45LTEyLjgtMTMuNS0yMi43LTI1LjMtMjMuNWMtMTItMC44LTIzLjMsNi45LTI3LjgsMTkuNGMtMy45LDEwLjctMywyMS4yLDMsMzFjMTAuMiwxNi41LDMxLjUsMTgsNDMuNiwzLjEKCQlDMzI4LjEsMTUwLjgsMzMwLjQsMTQzLjYsMzMwLjYsMTM0LjR6Ii8+Cgk8cGF0aCBmaWxsPSIjRkVGOEY0IiBkPSJNMjM5LjEsMjE5LjZjNy40LDEuNSwxNC4yLDMuNSwyMS4yLDQuMWM3LjgsMC43LDEwLjktMy40LDkuNy0xMS4xYy0wLjMtMS45LTAuNC0zLjgtMC42LTYuMgoJCWM0LjUsNC4xLDcuMSwxNC41LDQuOCwxOWMtMC44LDEuNS0yLjcsMy00LjQsMy41Yy04LjQsMi42LTE2LjgsMS43LTI1LTAuNkMyMzkuMSwyMjYuNywyMzcuMywyMjMuMiwyMzkuMSwyMTkuNnoiLz4KCTxwYXRoIGZpbGw9IiM0NzQ3NDciIGQ9Ik0yNDYuNCwxMzQuNGMtMC4zLDkuNi0yLjcsMTcuMS04LjIsMjMuNGMtMTEsMTIuOC0yOS41LDEyLjktNDAuMy0wLjFjLTguNi0xMC4zLTEwLjItMjIuMS01LjgtMzQuNwoJCWM0LjUtMTIuNiwxNS44LTIwLjIsMjcuOC0xOS40YzExLjcsMC44LDIyLjQsMTAuNiwyNS4zLDIzLjVDMjQ2LDEyOS45LDI0Ni4yLDEzMi44LDI0Ni40LDEzNC40eiBNMjA1LjQsMTI0LjkKCQljNi42LTAuOCwxMi42LTYuOCwxMi43LTEyLjZjLTUuNywwLTExLjcsNi0xMi42LDEyLjdjLTQuNiwwLjEtNi42LDMtNy44LDYuOEMyMDEuNSwxMzAuOCwyMDUsMTI5LjYsMjA1LjQsMTI0Ljl6Ii8+Cgk8cGF0aCBmaWxsPSIjNDg0ODQ4IiBkPSJNMzMwLjYsMTM0LjRjLTAuMyw5LjItMi41LDE2LjUtNy42LDIyLjdjLTEyLjEsMTQuOS0zMy40LDEzLjQtNDMuNi0zLjFjLTYuMS05LjgtNy0yMC4yLTMtMzEKCQljNC42LTEyLjUsMTUuOC0yMC4yLDI3LjgtMTkuNGMxMS44LDAuOCwyMi40LDEwLjYsMjUuMywyMy41QzMzMC4yLDEyOS45LDMzMC40LDEzMi44LDMzMC42LDEzNC40eiBNMjg4LjcsMTI0LjkKCQljNi42LTAuOCwxMi42LTYuOCwxMi43LTEyLjZjLTUuNywwLTExLjYsNi0xMi42LDEyLjdjLTQuNiwwLjEtNi42LDMtNy44LDYuOEMyODQuNywxMzAuNywyODguMywxMjkuNiwyODguNywxMjQuOXoiLz4KCTxwYXRoIGZpbGw9IiNGNEY0RjQiIGQ9Ik0yMDUuNSwxMjVjMC45LTYuNyw2LjktMTIuNywxMi42LTEyLjdjLTAuMSw1LjgtNi4xLDExLjgtMTIuNywxMi42TDIwNS41LDEyNXoiLz4KCTxwYXRoIGZpbGw9IiNFOUU5RTkiIGQ9Ik0yMDUuNCwxMjQuOWMtMC40LDQuNy00LDUuOS03LjcsNi45YzEuMy0zLjcsMy4yLTYuNyw3LjgtNi44QzIwNS41LDEyNSwyMDUuNCwxMjQuOSwyMDUuNCwxMjQuOXoiLz4KCTxwYXRoIGZpbGw9IiNGNEY0RjQiIGQ9Ik0yODguOCwxMjVjMC45LTYuOCw2LjktMTIuNywxMi42LTEyLjdjLTAuMSw1LjgtNi4xLDExLjgtMTIuNywxMi42TDI4OC44LDEyNXoiLz4KCTxwYXRoIGZpbGw9IiNFOUU5RTkiIGQ9Ik0yODguNywxMjQuOWMtMC4zLDQuNy00LDUuOC03LjcsNi45YzEuMy0zLjcsMy4yLTYuNyw3LjgtNi44QzI4OC44LDEyNSwyODguNywxMjQuOSwyODguNywxMjQuOXoiLz4KPC9nPgo8L3N2Zz4K'>
+ </div>
+
+    <div class='image_singleton'>
+       <img src='images/singleton.svg'>   </div>
+    <div class='image_menu'>
+       <img src='images/menu-icon.png' width='33px' height='33px' >    </div>
+</div>
+
+
+<div class='container_inf' display:'flex'>
+  <div class='inf' id='inf1'> Преимущества нашего образования </div>
+  <div class='inf' id='inf1_1'> Бесплатная подготовка к собеседованиям  </div>
+  <div class='inf' id='inf1_2'> <img src='images/preferences.png'>  </div>
+  <div class='inf' id='inf2_1'> Малокомплектные группы 6-8 человек  </div>
+  <div class='inf' id='inf2_2'> <img src='images/preferences.png'>  </div>
+  <div class='inf' id='inf3_1'> Партнерство с -компаниями города </div>
+  <div class='inf' id='inf3_2'> <img src='images/preferences.png'>  </div>
+  <div class='inf' id='inf4_1'> Поддержка по собеседованиям, во время и после окончания курса  </div>
+  <div class='inf' id='inf4_2'> <img src='images/preferences.png'>  </div>
+  <div class='inf' id='inf5_1'> Скидки выпускникам наших курсов и студентам компьютерных технологий  </div>
+  <div class='inf' id='inf5_2'> <img src='images/preferecnes.png'>  </div>
+  <div class='inf' id='inf6_1'> Оборудованные учебные места  </div>
+  <div class='inf' id='inf6_2'> <img src='images/preferences.png'>  </div>
+</div>
+
+
+<div class='conteiner_comments' display:'flex'>
+  <div class='comments' id='comment'> отзывы </div>
+  <div class='comments' id='comment1'>
+        <span> Перезвонили очень быстро. Уточнили все пожелания по обучению,
+               подобрали пробное занятие. Очень приятный и дружелюбный коллектив.
+            <br> <hr> Яна, 20 лет курс Java разработчик</span>
+  </div>
+  <div class='comments' id='comment2'>
+
+  </div>
+  <div class='comments' id='comment3'>
+
+  </div>
+  <button id='button_left'> &#8592; </button>
+  <button id='button_right'> &#8594; </button>
+</div>
+
+
+<div class='flex_directions' display:'flex'>
+   <div class='directions' id='direction'> Направления </div>
+
+   <div class='directions' id='direction1' display:'flex'>
+     <div class='direct_1' id='QA'> QA </div>
+     <div > Quality Assurance Engineer </div>
+     <div > Тестирование ПО </div>
+     <div > <button class='button_detail','direct_1'> подробнее </button>  </div>
+   </div>
+
+   <div class='directions' id='direction2'>
+     <div class='direct_2' id='Java'> Java </div>
+     <div > Java development </div>
+     <div > Разработка на языке Java  </div>
+     <div > <button class='button_detail','direct_2'> подробнее </button>  </div>
+   </div>
+
+   <div class='directions' id='direction3'>
+     <div class='direct_3' id='FE'> FE </div>
+     <div > Front-end development </div>
+     <div > Разработка клиентской части приложений  </div>
+     <div > <button class='button_detail','direct_3'> подробнее </button>  </div>
+   </div>
+
+   <div class='directions' id='direction4'>
+     <div class='direct_4' id='WebOps'> WebOps </div>
+     <div > Development & Operationst </div>
+     <div > Менеджмент веб-приложений  </div>
+     <div > <button class='button_detail','direct_4'> подробнее </button> </div>
+   </div>
+</div>
+
+
+  </body>
+</html>

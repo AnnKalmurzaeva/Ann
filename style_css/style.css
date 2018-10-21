@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css?family=K2D|Lobster|Montserrat');
+
+
+
+.image_osminog{
+  width: 44.8px;
+  height: 44.5px;
+
+}
+
+.image_singleton{
+  width: 118px;
+  height: 29px;
+  font-family: FiraSans-Ultra;
+  font-size: 26.6px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 3;
+  letter-spacing: normal;
+  text-align: center;
+  color: #666666;
+}
+
+.image_menu{
+  width: 33px;
+  height: 33px;
+}
+
+.container_inf{
+background-color: #ff6600;
+justify-content: space-around;
+align-items: center;
+align-content: space-around;
+
+}
+
+.inf{
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+  overflow:hidden;
+}
+
+#inf1{
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #333333;
+}
+
+#inf1_2{
+  width: 92px;
+  height: 92px;
+  border: solid 1px #cc3300;
+  background-color: #cc3300;
+  margin-top:-336px;
+
+}
+
+
+
+.conteiner_comments{
+  background-color: #009900;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+
+}
+
+.comments{
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: italic;
+  font-stretch: normal;
+  line-height: 1.23;
+  letter-spacing: normal;
+  text-align: center;
+  color: #333333;
+  background-color: #ffffff;
+}
+
+#comment{
+  width: 232px;
+  height: 55px;
+  font-size: 30px;
+  font-style: normal;
+  line-height: 0.58;
+  color: #ffffff;
+  background-color: #00cc00;
+}
+
+#button_left{
+  position: fixed;
+
+  width: 27px;
+  height: 19px;
+  box-shadow: 0.5px 0.9px 1px 0 rgba(33, 30, 30, 0.75);
+  background-color: #ffffff;
+}
