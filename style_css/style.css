@@ -28,14 +28,17 @@
 }
 
 .container_inf{
-background-color: #ff6600;
-justify-content: space-around;
-align-items: center;
-align-content: space-around;
+  display: flex;
+  flex-direction: column;
+  background-color: #ff6600;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-around;
 
 }
 
 .inf{
+  align-self: center;
   font-family: Roboto;
   font-size: 18px;
   font-weight: normal;
@@ -56,26 +59,47 @@ align-content: space-around;
   color: #333333;
 }
 
-#inf1_2{
-  width: 92px;
-  height: 92px;
-  border: solid 1px #cc3300;
+.inf_images{
+  width: 83px;
+  height: 83px;
+  border: solid 5px #cc3300;
   background-color: #cc3300;
-  margin-top:-336px;
+}
 
+#image1{
+  margin: -336px 0px 0px 0px;
+}
+#image2{
+  margin: -252px 0px 0px 0px;
+}
+#image3{
+  margin: 0px 0px 0px 0px;
+}
+#image4{
+  margin: -84px 0px 0px 0px;
+}
+#image5{
+  margin: -168px 0px 0px 0px;
+}
+#image6{
+  margin: -420px 0px 0px 0px;
 }
 
 
 
 .conteiner_comments{
-  background-color: #009900;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   align-content: flex-start;
+  background-color: #009900;
 
 }
 
 .comments{
+  align-self: center;
   font-family: Roboto;
   font-size: 14px;
   font-weight: normal;
@@ -88,21 +112,50 @@ align-content: space-around;
   background-color: #ffffff;
 }
 
-#comment{
-  width: 232px;
-  height: 55px;
+#comment1{
+  display: block;
+  width: 124px;
+  height: 22px;
   font-size: 30px;
   font-style: normal;
   line-height: 0.58;
+  border: solid 15px #00cc00;
   color: #ffffff;
   background-color: #00cc00;
+
 }
 
-#button_left{
-  position: fixed;
+.comment{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  border: solid 16px #009900;
+  border-top: 0px;
 
+}
+
+.commentar{
+  width: 174px;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: italic;
+  font-stretch: normal;
+  line-height: 1.23;
+  letter-spacing: normal;
+  text-align: center;
+  color: #333333;
+  border: solid 9.5px #ffffff;
+  
+}
+
+#button_left, #button_right{
   width: 27px;
   height: 19px;
-  box-shadow: 0.5px 0.9px 1px 0 rgba(33, 30, 30, 0.75);
-  background-color: #ffffff;
+  font-size: 20px;
+  border: 0px;
+  background-color: #009900;
 }
